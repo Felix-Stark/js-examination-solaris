@@ -1,16 +1,7 @@
-/**  
- * endpoints: 
- * get key - '/keys' - returnerar API nyckel.-----
- * get bodies - '/bodies' - returnerar alla stora himlakroppar i vårt solsystem.
- * dela upp bodies till singel object
- * display vald body i UI
- * klicka på body för att få fram information
- * klicka för att komma tillbaka till mainpage
-*/
 
 const bodyElem = document.querySelectorAll('.body');
 const infoPage = document.querySelector('.info');
-const closeElem = document.querySelector('.close')
+const closeElem = document.querySelector('#close')
 const nameElem = document.querySelector('#name');
 const latinNameElem = document.querySelector('#latin-name');
 const descriptionElem = document.querySelector('#desc');
@@ -21,26 +12,25 @@ const distanceElem = document.querySelector('#distance');
 const moonsList = document.querySelector('#moonsList');
 
 let bodiesArr;
-
+let bodyId;
+let moonItem;
 
 for (let i = 0; i < bodyElem.length; i++) {
     bodyElem[i].addEventListener('click', function () {
 
-        const bodyId = this.id;
+        bodyId = this.id;
         displayInfo(bodyId)
     })
 }
 closeElem.addEventListener('click', () => {
     infoPage.classList.toggle('show');
+    moonsList.innerHTML = '';
 })
 
 function displayInfo(bodyId) {
     infoPage.classList.toggle('show');
     let body = bodiesArr[bodyId];
-    let moonsArr = body.moons
-    // moonsArr.map((moon) => {
-    //     console.log(moon)
-    // })
+    let moonsArr = body.moons;
     
     console.log(moonsArr)
     console.log(body);
@@ -51,8 +41,12 @@ function displayInfo(bodyId) {
     tempDayElem.innerHTML = body.temp.day;
     tempNightElem.innerHTML = body.temp.night;
     distanceElem.innerHTML = body.distance;
+    if(moonsArr == 0) {
+        moonsList.innerHTML = body.name + ' ' + 'har ingen måne.'
+    }
+    
     for (let i = 0; i < moonsArr.length; i++) {
-        let moonItem = document.createElement('li');
+        moonItem = document.createElement('li');
         moonItem.innerHTML = moonsArr[i];
         moonsList.append(moonItem)
     }

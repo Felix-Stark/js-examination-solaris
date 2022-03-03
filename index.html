@@ -12,37 +12,34 @@
         <h1  class="header--large">SOLSYSTEMET</h1>
         <h2 class="header--medium">Solaris</h2>
     </header>
-    <div class="wrapper">
-        
-        <section class="solar-system">
-            <div id="0" class="body sun" title="Solen"></div>
-            <div id="1" class="body mercurius" title="Mercurius"></div>
-            <div id="2" class="body venus" title="Venus"></div>
-            <div id="3" class="body tellus" title="Jorden"></div>
-            <div id="4" class="body mars" title="Mars"></div>
-            <div id="5" class="body jupiter" title="Jupiter"></div>
-            <div id="6" class="body saturnus" title="Saturnus"><div class="saturnus-ring"></div></div>
-            <div id="7" class="body uranus" title="Uranus"></div>
-            <div id="8" class="body neptunus" title="Neptunus"></div>
-        </section>
-    </div>
+    <section class="solar-system">
+        <div id="0" class="body sun" title="Solen" href="#name"></div>
+        <div id="1" class="body mercurius" title="Mercurius"></div>
+        <div id="2" class="body venus" title="Venus"></div>
+        <div id="3" class="body tellus" title="Jorden"></div>
+        <div id="4" class="body mars" title="Mars"></div>
+        <div id="5" class="body jupiter" title="Jupiter"></div>
+        <div id="6" class="body saturnus" title="Saturnus"><div class="saturnus-ring"></div></div>
+        <div id="7" class="body uranus" title="Uranus"></div>
+        <div id="8" class="body neptunus" title="Neptunus"></div>
+    </section>
     <section class="info">
         <article class="info-wrapper">
-            <section class="divider">
+            <section class="info__head space-between">
                 <h1 class="header--large" id="name"></h1>
-                <p class="close">X</p>
+                <p id="close" class="close--info">X</p>
             </section>
             <h2 class="header--medium" id="latin-name"></h2>
             <p class="text" id="desc"></p>
             <article class="stats">
-                <section class="divider">
-                    <aside class="left">
+                <section class="space-between">
+                    <aside>
                         <h3 class="header--small">OMKRETS</h3>
                         <p class="text" id="circumference"></p>
                         <h3 class="header--small">MAX TEMPERATUR</h3>
                         <p class="text" id="temp-day"></p>
                     </aside>
-                    <aside class="right">
+                    <aside>
                         <h3 class="header--small">KM FRÅN SOLEN</h3>
                         <p class="text" id="distance"></p>
                         <h3 class="header--small">MIN TEMPERATUR</h3>
@@ -50,8 +47,7 @@
                     </aside>
                 </section>
                 <h3 class="header--small">MÅNAR</h3>
-                <ul class="text" id="moonsList">
-                    
+                <ul class="moons__list text" id="moonsList">
                 </ul>
             </article>
         </article>
